@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+.fade{
+    opacity: 0;
+
+}
+
+.flash{
+    background-color: white;
+    color: black;
+}
+
+#border{
+    height: 900px;
+    width: 1600px;
+    border: 1px solid darkgray;
+}    
+
+#window{
+    height: 90%;
+    width: 93%;
+    border: 1px solid darkgray;
+}
+
+#content{
+    height: 100%;
+    width: 100%;
+    transition: 1000ms;
+}
+
+
+#title{
+    height: 400px;
+    width: 400px;
+}
+
+#start{
+    width: 300px;
+    font-size: 35pt;
+}
+
+.progress{
+    background-color: grey;
+    width: 100px;
+    height: 100px;
+    transform: rotate(270deg);
+    border-radius: 50%;
+}
+
+.progress-bar{
+    background-color: crimson;
+}
