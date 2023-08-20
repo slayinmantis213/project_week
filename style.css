@@ -7,57 +7,192 @@
     color: white;
 }
 
-a{
+
+
+.bg-none {
+    background: none;
+}
+
+a {
     color: white;
 }
 
-.fade{
+.fade {
     opacity: 0;
-
 }
 
-.flash{
+.light {
+    opacity: 1;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.flash {
     background-color: white;
     color: black;
 }
 
-#border{
-    height: 900px;
-    width: 1600px;
-    border: 1px solid darkgray;
-}    
+.gap-20 {
+    gap: 20px;
+}
 
-#window{
+/* COMMENT HEADERS  */
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    color: darkolivegreen;
+}
+
+header h1 {
+    font-size: 35pt;
+}
+
+
+
+/* MAIN  */
+
+.border {
+    height: 900px;
+    width: 85%;
+    border: 1px solid darkgray;
+}
+
+.window {
     height: 90%;
     width: 93%;
     border: 1px solid darkgray;
 }
 
-#content{
+#content1,
+#content2 {
     height: 100%;
     width: 100%;
     transition: 1000ms;
+    padding: 40px;
+    gap: 40px;
 }
 
+/* TITLE PAGE  */
 
-#title{
+#title {
     height: 400px;
     width: 400px;
 }
 
-#start{
+#start {
     width: 300px;
     font-size: 35pt;
 }
 
-.progress{
-    background-color: grey;
-    width: 100px;
-    height: 100px;
-    transform: rotate(270deg);
-    border-radius: 50%;
+
+/* CHAR SELECT  */
+
+.char-box {
+    outline: 2px solid cyan;
+    border-radius: 110px;
+    flex: 1;
+    opacity: 0.3;
+    transition: 190ms;
 }
 
-.progress-bar{
+.char-box,
+.char-box * {
+    background-color: darkslategray;
+
+}
+
+.char-box img {
+    height: 200px;
+    margin-right: 20px;
+}
+
+
+.char-box p {
+    max-width: 200px;
+}
+
+.char-info {
+    min-width: 475px;
+}
+
+.icon {
+    max-height: 80px;
+    max-width: 80px;
+}
+
+
+/* INTRO ROOM  */
+
+.intro-bg {
+    background-image: url(./img/background/dungeon_intro_edit.png);
+    background-size: contain;
+}
+
+/* HUD  */
+
+#content3 {
+    height: 100%;
+    width: 100%;
+}
+
+
+#hud {
+    background-image: url(./img/background/wood_texture_bottom.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 200px;
+    width: 85%;
+    padding: 20px 0 0 20px;
+    box-shadow: 0 -3px 10px black;
+    border-radius: 30px;
+}
+
+#portrait {
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: -3px 5px 10px 5px black;
+    margin-right: -50px;
+    z-index: +1;
+}
+
+
+.p-life {
+    width: 250px;
+    height: 250px;
+    transform: rotate(270deg);
+    border-radius: 50%;
+    box-shadow: inset -8px 0 20px black;
+    outline: 1px dotted gold;
+
+}
+
+.p-life-sh {
+    box-shadow: inset 12px 3px 15px black;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.progress-bar {
     background-color: crimson;
+}
+
+.mt-neg-70 {
+    margin-top: -70px;
+}
+
+
+#equipment,
+#dialogue {
+    height: 100%;
+    flex: 1;
+    background-color: aqua;
+}
+
+#e-d {
+    height: 75%;
+    flex: 1;
 }

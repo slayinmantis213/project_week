@@ -2,27 +2,32 @@ console.log('gday');
 
 var start = document.getElementById('start')
 
-function addFlash(){
+function addFlash() {
     start.classList.add("flash");
 }
 
-function cutFlash(){
+function cutFlash() {
     start.classList.remove("flash");
+}
+
+function lightUp(elem) {
+    elem.style.opacity = 1;
+}
+
+function lightDown(elem) {
+    elem.style.opacity = 0.3;
 }
 
 setInterval(addFlash, 600);
 setInterval(cutFlash, 1200);
 
-function next(id){
-    let x = document.getElementById(id);
-    x.remove();
-}
-
-function fade(id){
-    let x = document.getElementById(id);
+async function fade(id) {
+    var x = document.getElementById(id);
     x.classList.add("fade");
     console.log('faded');
-    // setTimeout(next(id), 3000);
-    // console.log('gone');
-}
 
+    await setTimeout(() => {
+        x.remove();
+        console.log('gone');
+    }, 1150);
+}

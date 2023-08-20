@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    
+
 </head>
+
 <body>
     <main>
-        <div id="border" class="m-auto mt-3 d-flex align-items-center justify-content-center">
-            <div id="window">
-                <div id="content" class="d-flex flex-column align-items-center justify-content-around">
+
+        <header>
+            <h1>//TITLE SCREEN</h1>
+        </header>
+
+        <div class="border m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div class="window">
+                <div id="content1" class="d-flex flex-column align-items-center justify-content-around">
                     <img src="./img/background/f8t.png" alt="title-logo" id="title">
-                    <button id="start" onclick="fade('content')">START GAME</button>
+                    <button id="start" onmouseover="addFlash(this)" onclick="fade('content1');">START GAME</button>
                     <div>
                         <a href="#" class="text-decoration-none d-block text-center">sauce</a>
                         <a href="bib.txt" class="text-decoration-none d-block text-center mt-3">bibliography</a>
@@ -22,13 +30,105 @@
                 </div>
             </div>
         </div>
-        <div></div>
-        <!-- <div class="progress">
-            <div class="progress-bar" style="width: 71%"></div>
-        </div> -->
+
+        <header>
+            <h1>//CHAR SELECT</h1>
+        </header>
+
+        <div class="border m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div class="window">
+
+                <div id="content2" class="d-flex flex-column">
+
+                    <div id="war" class="char-box d-flex align-items-center justify-content-around"
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        <div class="char-info d-flex align-items-center justify-content-between">
+                            <h1 class="mr-20">WARRIOR</h1>
+                            <img src="./img/character/warrior.png" alt="warrior pic">
+                            <p>Forged in the fevered pitch of battle,
+                                the warrior relies on blade and brawn to subdue the enemy.</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="./img/icons/sword.png" alt="sword icon" class="icon">
+                            <p>Claymore: attacks gain +2 bonus damage</p>
+                        </div>
+                    </div>
+
+                    <div id="rog" class="char-box d-flex align-items-center justify-content-around"
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        <div class="char-info d-flex align-items-center justify-content-between">
+                            <h1 class="mr-20">ROGUE</h1>
+                            <img src="./img/character/rogue.png" alt="rogue pic">
+                            <p>Master of subtlety and cunning, the rogue leverages
+                                tactics and precision to gain the upper hand.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <img src="./img/icons/dagger.png" alt="dagger icon" class="icon">
+                                <p>Dagger: increased chance to critically strike</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="./img/icons/Bow.png" alt="bow icon" class="icon">
+                                <p>Bow: attacks cost 1 sp and are doubled (can miss!)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="mag" class="char-box d-flex align-items-center justify-content-around"
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        <div class="char-info d-flex align-items-center justify-content-between">
+                            <h1 class="mr-20">MAGE</h1>
+                            <img src="./img/character/mage.png" alt="mage pic">
+                            <p>A locus of mystery and power, the mage incinerates foes
+                                with cosmic flame.</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="./img/icons/staff.png" alt="staff icon" class="icon">
+                            <p>Staff: gain Fireball spell; spells cost 1 sp; attacks deal reduced damage.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <h1>//HUD/NAVIGATION CONCEPT</h1>
+            <h3>//(intro room)</h3>
+        </header>
+
+        <div class="border m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div class="window">
+
+                <div id="content3" class="intro-bg d-flex flex-column align-items-center justify-content-end">
+
+                    <div id="hud" class="d-flex align-items-center">
+                        <img src="./img/character/rog-port.png" alt="PORTRAIT" id="portrait">
+                        <div class="p-life progress bg-none mt-neg-70 bg-none">
+                            <div class="progress-bar p-life-sh" style="width: 92%"></div>
+                        </div>
+                        <div>
+                            <div id="roller"></div>
+                            <p id="sp">Spell points</p>
+                            <button>spell menu?</button>
+                        </div>
+                        <div id="e-d" class="d-flex justify-content-between gap-20 bg-none mr-20">
+                            <div id="equipment"></div>
+                            <div id="dialogue"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </main>
     <script src="./script.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
