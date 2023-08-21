@@ -21,7 +21,15 @@ function lightDown(elem) {
 setInterval(addFlash, 600);
 setInterval(cutFlash, 1200);
 
-async function fade(id) {
+function addNew(id1, id2){
+    var old = document.getElementById(id1)
+    var add = document.getElementById(id2)
+    
+    old.innerHTML += add.innerHTML; 
+}
+
+
+async function fadeTitle(id) {
     var x = document.getElementById(id);
     x.classList.add("fade");
     console.log('faded');
@@ -29,5 +37,7 @@ async function fade(id) {
     await setTimeout(() => {
         x.remove();
         console.log('gone');
-    }, 1150);
+        addNew('win1', 'win2');
+        console.log('new')
+    }, 1100);
 }
