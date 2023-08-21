@@ -34,8 +34,8 @@ a {
     color: black;
 }
 
-.gap-20 {
-    gap: 20px;
+.gap-10 {
+    gap: 10px;
 }
 
 /* COMMENT HEADERS  */
@@ -99,8 +99,7 @@ header h1 {
     transition: 190ms;
 }
 
-.char-box,
-.char-box * {
+.char-box, .char-box * {
     background-color: darkslategray;
 
 }
@@ -185,11 +184,13 @@ header h1 {
 }
 
 
-#equipment,
-#dialogue {
+
+
+#equipment, #dialogue {
+    outline: 2px solid gold;
+    border-radius: 20px;
     height: 100%;
     flex: 1;
-    background-color: aqua;
 }
 
 #e-d {
