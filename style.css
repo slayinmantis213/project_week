@@ -8,7 +8,6 @@
 }
 
 
-
 .bg-none {
     background: none;
 }
@@ -17,25 +16,32 @@ a {
     color: white;
 }
 
-.fade {
-    opacity: 0;
-}
-
-.light {
-    opacity: 1;
+.mt-neg-70 {
+    margin-top: -70px;
 }
 
 .mr-20 {
     margin-right: 20px;
 }
 
+.h-100{
+    height: 100%;
+}
+
+.gap-10 {
+    gap: 10px;
+}
 .flash {
     background-color: white;
     color: black;
 }
 
-.gap-10 {
-    gap: 10px;
+.fade {
+    opacity: 0;
+}
+
+.light {
+    opacity: 1;
 }
 
 /* COMMENT HEADERS  */
@@ -97,10 +103,11 @@ header h1 {
     flex: 1;
     opacity: 0.3;
     transition: 190ms;
+    cursor: pointer;
 }
 
 .char-box, .char-box * {
-    background-color: darkslategray;
+    background-color: darkslategrey;
 
 }
 
@@ -126,16 +133,38 @@ header h1 {
 
 /* INTRO ROOM  */
 
-.intro-bg {
-    background-image: url(./img/background/dungeon_intro_edit.png);
-    background-size: contain;
+/* url(./img/background/dungeon_intro_edit.png) */
+
+/* NAVIGATION MENU */
+
+#navigation{
+    height: 500px;
+    width: 750px;
+    font-size: 30pt;
 }
+#navigation p{
+    color: yellow;
+}
+
+#navigation button{
+    height: 100px;
+    width: 125px;
+    background-color: yellow;
+    border-radius: 20px;
+    transition: 100ms;
+}
+
+
 
 /* HUD  */
 
 #content3 {
+    background-image: url(./img/background/dungeon_intro_edit.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    transition: 1000ms;
 }
 
 
@@ -145,7 +174,6 @@ header h1 {
     background-size: 100% 100%;
     height: 200px;
     width: 85%;
-    padding: 20px 0 0 20px;
     box-shadow: 0 -3px 10px black;
     border-radius: 30px;
 }
@@ -156,6 +184,7 @@ header h1 {
     box-shadow: -3px 5px 10px 5px black;
     margin-right: -50px;
     z-index: +1;
+    outline: 1px solid gold;
 }
 
 
@@ -165,7 +194,7 @@ header h1 {
     transform: rotate(270deg);
     border-radius: 50%;
     box-shadow: inset -8px 0 20px black;
-    outline: 1px dotted gold;
+    outline: 1px solid gold;
 
 }
 
@@ -179,21 +208,97 @@ header h1 {
     background-color: crimson;
 }
 
-.mt-neg-70 {
-    margin-top: -70px;
+
+.dropdown-menu img{
+    height: 50px;
+    background-color: gold;
+    border-radius: 5px;
+    outline: 3px solid black;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px 8px gold;
+}
+
+.dropend, #sp{
+    outline: 1px solid gold;
+}
+
+.dropend button{
+    background-color: #36291F;
+    height: 50px;
+    width: 100px;
+} 
+
+#sp, #sp *{
+    background-color: #756050;
+}
+
+#sp{
+    height: 100px;
+    font-size: 15pt;
+    margin-right: 5px;
+    border-radius: 10px;
+
+}
+
+#roller{
+    height: 200px;
+    width: 200px;
+    margin-top: -150px;
+
+    border-radius: 50%;
+    background-image: url(./img/background/d20.png);
+    background-size: contain;
+    background-position: center;
+    font-size: 30pt;
+    background-color: gold;
+    transition: 1000ms;
+}
+.rol-shad{
+    box-shadow: 0 0 20px 10px gold;
+
+}
+
+#e-d {
+    height: 75%;
+    flex: 1;
 }
 
 
-
-
-#equipment, #dialogue {
+#equipment{
     outline: 2px solid gold;
     border-radius: 20px;
     height: 100%;
     flex: 1;
 }
 
-#e-d {
-    height: 75%;
+#equipment *{
+    background-color: #756050;
+
+}
+
+.equip-sel{
+    border-radius: 20px;
+    outline: 3px solid gold;
+}
+
+#equipment div{
+    border-radius: 20px;
+    padding: 10px;
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 15pt;
+    background-color: #756050;
+}
+
+.dial{
+    outline: 2px solid gold;
+    border-radius: 20px;
+    height: 100%;
     flex: 1;
+}
+
+#dialogue{
+    opacity: 0.7;
+    background-color: rgb(96, 104, 81);
+    border-radius: 20px;
 }
