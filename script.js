@@ -2,9 +2,9 @@ console.log('gday');
 
 let roomCount = 0;
 
-var bgs = ["url(./img/background/dungeon_bg1.jpg)", "url(./img/background/dungeon_bg2.jpg)", 
+let bgs = ["url(./img/background/dungeon_bg1.jpg)", "url(./img/background/dungeon_bg2.jpg)", 
 "url(./img/background/dungeon_bg3.jpg)","url(./img/background/dungeon_bg4.jpg)" , 
-"url(./img/background/dungeon_bg5.jpg)", "url(./img/background/pre_boss_room.jpg)"]
+"url(./img/background/dungeon_bg5.jpg)", "url(./img/background/pre_boss_room.jpg)", "url(./img/background/barbarian_castle_interior_by_robertcrescenzio.jpg)"]
 
 var start = document.getElementById('start')
 
@@ -70,9 +70,18 @@ function move(id){
     var butt = document.getElementById(id);
     x.style.opacity = 0;
     setTimeout(() => {
-        x.style.backgroundImage = bgs[Math.round(Math.random() * (bgs.length-1))];
-        butt.remove();
+        // butt.remove();
         roomCount++;
+        if (roomCount >= 5){
+            butt.remove();
+            x.style.backgroundImage = bgs[6];
+        }
+        if (roomCount === 4){
+            x.style.backgroundImage = bgs[5];
+        }
+        if (roomCount < 4){
+            x.style.backgroundImage = bgs[Math.round(Math.random() * (bgs.length-3))];
+        }
         console.log(roomCount)
     }, 500)
     setTimeout(() => {

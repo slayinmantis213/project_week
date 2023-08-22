@@ -101,7 +101,8 @@
         <div class="border m-auto mt-3 d-flex align-items-center justify-content-center">
             <div class="window">
 
-                <div id="content3" class="intro-bg d-flex flex-column flex-column-reverse align-items-center justify-content-between">
+                <div id="content3"
+                    class="intro-bg d-flex flex-column flex-column-reverse align-items-center justify-content-between">
 
                     <div id="hud" class="d-flex align-items-center">
                         <img src="./img/character/rog-port.png" alt="PORTRAIT" id="portrait">
@@ -111,46 +112,52 @@
                         <div class="bg-none">
                             <div class="btn-group dropend">
                                 <button type="button" class="btn btn-secondary dropdown-toggle"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Spell
-                            </button>
-                            <ul class="dropdown-menu bg-none">
-                                <img src="./img/icons/fireball.png" alt="" class="bg-none">
-                            </ul>
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Spell
+                                </button>
+                                <ul class="dropdown-menu bg-none">
+                                    <li class="bg-none"><img src="./img/icons/fireball.png" alt="" class="bg-none"></li>
+                                </ul>
+                            </div>
+                            <div id="sp" class="d-flex align-items-center p-2">
+                                <p class="text-center">Spell points: <br>
+                                    <span>15</span>/15
+                                </p>
+                            </div>
                         </div>
-                        <div id="sp" class="d-flex align-items-center p-2">
-                            <p class="text-center">Spell points: <br>
-                                <span>15</span>/15
-                            </p>
-                        </div>
-                    </div>
-                        <div id="roller" class="bg-none d-flex align-items-center justify-content-center" onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
+                        <div id="roller" class="bg-none d-flex align-items-center justify-content-center"
+                            onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
                             20
                         </div>
                         <div id="e-d" class="d-flex justify-content-between gap-10 bg-none mr-20">
                             <div id="equipment" class="bg-none">
                                 <div class="h-100">
                                     <p>Equipment</p>
-                                    <img src="./img/icons/Bow.png" alt="bow icon" class="icon h-100" onclick="eqSel(this)">
-                                    <img src="./img/icons/dagger.png" alt="dagger icon" class="icon" onclick="eqSel(this)">
+                                    <img src="./img/icons/Bow.png" alt="bow icon" class="icon h-100"
+                                        onclick="eqSel(this)">
+                                    <img src="./img/icons/dagger.png" alt="dagger icon" class="icon"
+                                        onclick="eqSel(this)">
                                 </div>
-                                
+
                             </div>
                             <div class="bg-none dial">
-                                <div id="dialogue" class="bg-none text-center d-flex align-items-center justify-content-center h-100">
+                                <div id="dialogue"
+                                    class="bg-none text-center d-flex align-items-center justify-content-center h-100">
                                     holding place
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
                     <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img src="./img/icons/left_arr.png" alt="left arrow" class="bg-none icon"></button>
+                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
+                                src="./img/icons/left_arr.png" alt="left arrow" class="bg-none icon"></button>
                         <p class="bg-none">CHOOSE YOUR F8T</p>
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img src="./img/icons/right_arr.png" alt="right arrow" class="bg-none icon"></button>
+                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
+                                src="./img/icons/right_arr.png" alt="right arrow" class="bg-none icon"></button>
                     </div>
-                    
+
 
                 </div>
 
