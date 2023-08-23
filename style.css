@@ -7,6 +7,8 @@
     color: white;
 }
 
+/* body {overflow: hidden} */
+
 
 .bg-none {
     background: none;
@@ -44,6 +46,10 @@ a {
     opacity: 1;
 }
 
+.progress-bar {
+    background-color: crimson;
+}
+
 /* COMMENT HEADERS  */
 
 header {
@@ -60,11 +66,13 @@ header h1 {
 
 
 /* MAIN  */
+#view {
+    border: 1px solid darkgray;
+}
 
-.border {
+.bord {
     height: 900px;
     width: 85%;
-    border: 1px solid darkgray;
 }
 
 .window {
@@ -158,13 +166,14 @@ header h1 {
 
 /* HUD  */
 
-#content3 {
+#content3, #content4 {
     background-image: url(./img/background/dungeon_intro_edit.png);
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     transition: 1000ms;
+    display: hidden;
 }
 
 
@@ -177,6 +186,8 @@ header h1 {
     box-shadow: 0 -3px 10px black;
     border-radius: 30px;
 }
+
+/* LEFT HUD  */
 
 #portrait {
     height: 90px;
@@ -202,10 +213,6 @@ header h1 {
     box-shadow: inset 12px 3px 15px black;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-}
-
-.progress-bar {
-    background-color: crimson;
 }
 
 
@@ -240,11 +247,14 @@ li img{
 
 }
 
+
+/* d20  */
+
+
 #roller{
     height: 200px;
     width: 200px;
     margin-top: -150px;
-
     border-radius: 50%;
     background-image: url(./img/background/d20.png);
     background-size: contain;
@@ -258,6 +268,9 @@ li img{
 
 }
 
+
+/* RIGHT HUD  */
+
 #e-d {
     height: 75%;
     flex: 1;
@@ -269,16 +282,16 @@ li img{
     border-radius: 20px;
     height: 100%;
     flex: 1;
+    gap: 2px;
 }
 
 #equipment *{
-    background-color: #756050;
+    background: none;
 
 }
 
 .equip-sel{
-    border-radius: 20px;
-    outline: 3px solid gold;
+    outline: 5px solid gold;
 }
 
 #equipment div{
@@ -288,7 +301,15 @@ li img{
     opacity: 0.7;
     font-size: 15pt;
     background-color: #756050;
+    height: 100%;
 }
+
+#equipment .icon {
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 
 .dial{
     outline: 2px solid gold;
@@ -301,4 +322,36 @@ li img{
     opacity: 0.7;
     background-color: rgb(96, 104, 81);
     border-radius: 20px;
+    font-style: italic;
+    font-size: 15pt;
+}
+
+/* MONSTERS  */
+
+.encounter {
+    flex: 2;
+}
+
+.mon-bar{
+    width: 50%;
+    height: 20px;
+    /* border: 1px solid black; */
+    outline: 3px solid black;
+    background-color: lightgray;
+}
+
+#gob1 img, #gob2 img{
+    height: 300px;
+}
+
+#imp img{
+    height: 340px;
+}
+
+#wraith img{
+    height: 430px;
+}
+
+#troll img{
+    height: 470px;
 }
