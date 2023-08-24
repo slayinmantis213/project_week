@@ -92,36 +92,25 @@
         </div>
 
         <!-- CONTENT 3 ROG/NAV SIM -->
-        <!-- <header>
-                <h1>ROGUE</h1>
-            </header>
+        <header>
+            <h1>ROGUE</h1>
+        </header>
 
         <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
             <div class="window">
 
                 <div id="content3"
-                    class="intro-bg d-flex flex-column flex-column-reverse align-items-center justify-content-between">
+                    class="d-flex flex-column flex-column-reverse align-items-center justify-content-end">
 
                     <div id="hud" class="d-flex align-items-center">
                         <img src="./img/character/rog-port.png" alt="PORTRAIT" id="portrait">
                         <div class="p-life progress bg-none mt-neg-70 bg-none">
-                            <div class="progress-bar p-life-sh" style="width: 92%"></div>
+                            <div id="p-life" class="progress-bar p-life-sh" style="width: 100%"></div>
                         </div>
-                        <div class="bg-none">
-                            <div class="btn-group dropend">
-                                <button type="button" class="btn btn-secondary dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Spell
-                                </button>
-                                <ul class="dropdown-menu bg-none">
-                                    <li class="bg-none"><em>None</em></li>
-                                </ul>
-                            </div>
-                            <div id="sp" class="d-flex align-items-center p-2">
-                                <p class="text-center">Spell points: <br>
-                                    <span>15</span>/15
-                                </p>
-                            </div>
+                        <div id="sp" class="d-flex align-items-center p-2">
+                            <p class="text-center">Spell points: <br>
+                                <span>15</span>/15
+                            </p>
                         </div>
                         <div id="roller" class="bg-none d-flex align-items-center justify-content-center"
                             onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
@@ -131,10 +120,11 @@
                             <div id="equipment" class="bg-none">
                                 <div class="h-100">
                                     <p>Equipment</p>
-                                    <img src="./img/icons/Bow.png" alt="bow icon" class="icon"
-                                        onclick="eqSel(this)">
+                                    <img src="./img/icons/Bow.png" alt="bow icon" class="icon" onclick="eqSel(this)">
                                     <img src="./img/icons/dagger.png" alt="dagger icon" class="icon"
                                         onclick="eqSel(this)">
+                                    <img src="./img/icons/life_pot.png" alt="life potion" class="icon"
+                                        onclick="heal(this)" onmouseover="rolShad(this)" onmouseout="remShad(this)">
                                 </div>
 
                             </div>
@@ -147,29 +137,35 @@
 
                         </div>
                     </div>
-
-                    <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
-                                src="./img/icons/left_arr.png" alt="left arrow" class="bg-none icon"></button>
-                        <p class="bg-none">CHOOSE YOUR F8T</p>
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
-                                src="./img/icons/right_arr.png" alt="right arrow" class="bg-none icon"></button>
+                    <div id="c-frame"
+                        class="bg-none d-flex flex-column flex-column-reverse align-items-center justify-content-end">
+                        <div id="nav-box" class="bg-none">
+                            <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/left_arr.png" alt="left arrow"
+                                        class="bg-none icon"></button>
+                                <p class="bg-none">CHOOSE YOUR F8T</p>
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/right_arr.png" alt="right arrow"
+                                        class="bg-none icon"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </div> -->
+        </div>
 
         <!-- CONTENT 4 MAG/COMBAT SIM  -->
         <header>
             <h1>MAGE</h1>
         </header>
 
-        <div class="bord border m-auto mt-3 d-flex align-items-center justify-content-center">
+        <!-- <div class="bord border m-auto mt-3 d-flex align-items-center justify-content-center">
             <div id=" " class="window">
 
                 <div id="content4"
-                    class="intro-bg d-flex flex-column flex-column-reverse align-items-center justify-content-between">
+                    class="d-flex flex-column flex-column-reverse align-items-center justify-content-between">
 
                     <div id="hud" class="d-flex align-items-center">
                         <img src="./img/character/mage-port.png" alt="PORTRAIT" id="portrait">
@@ -228,10 +224,11 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
         <!-- ENCOUNTERS -->
 
+        <!-- room1 -->
         <div id="e-frame1" class="bg-none">
             <div id="encounter1" class="encounter bg-none d-flex">
                 <div id="gob1" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
@@ -240,7 +237,7 @@
                         <div id="gob1-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/goblin.png" alt="goblin pic" class="bg-none"
-                        onclick="getHit('gob1-life', 'goblin1')">
+                        onclick="getHit('gob1-life', 'goblin1', 'gob1')">
                 </div>
                 <div id="gob2" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
                     <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
@@ -248,10 +245,12 @@
                         <div id="gob2-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/gob2-edit.png" alt="goblin pic" class="bg-none"
-                        onclick="getHit('gob2-life', 'goblin2')">
+                        onclick="getHit('gob2-life', 'goblin2', 'gob2')">
                 </div>
             </div>
         </div>
+
+        <!-- room2 -->
         <div id="e-frame2" class="bg-none">
             <div id="encounter2" class="encounter d-flex bg-none">
                 <div id="imp" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
@@ -260,7 +259,7 @@
                         <div id="imp-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/cyclopse_imp.png" alt="imp pic" class="bg-none"
-                        onclick="getHit('imp-life', 'imp')">
+                        onclick="getHit('imp-life', 'imp', 'imp')">
                 </div>
             </div>
         </div>
@@ -273,7 +272,7 @@
                         <div id="wraith-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/wraith.png" alt="wraith pic" class="bg-none"
-                        onclick="getHit('wraith-life', 'wraith')">
+                        onclick="getHit('wraith-life', 'wraith', 'wraith')">
                 </div>
                 <div id="imp" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
                     <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
@@ -281,7 +280,7 @@
                         <div id="imp-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/cyclopse_imp.png" alt="imp pic" class="bg-none"
-                        onclick="getHit('imp-life', 'imp')">
+                        onclick="getHit('imp-life', 'imp', 'imp')">
                 </div>
             </div>
         </div>
@@ -293,7 +292,7 @@
                         <div id="troll-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/Troll_TwoHeadedTroll.png" alt="two-headed troll pic" class="bg-none"
-                        onclick="getHit('troll-life', 'troll')">
+                        onclick="getHit('troll-life', 'troll', 'troll')">
                 </div>
             </div>
         </div>
@@ -305,7 +304,7 @@
                         <div id="troll-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/Troll_TwoHeadedTroll.png" alt="two-headed troll pic" class="bg-none"
-                        onclick="getHit('troll-life', 'troll')">
+                        onclick="getHit('troll-life', 'troll', 'troll')">
                 </div>
                 <div id="gob2" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
                     <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
@@ -313,7 +312,161 @@
                         <div id="gob2-life" class="progress-bar" style="width: 100%"></div>
                     </div>
                     <img src="./img/monster/gob2-edit.png" alt="goblin pic" class="bg-none"
-                        onclick="getHit('gob2-life', 'goblin2')">
+                        onclick="getHit('gob2-life', 'goblin2', 'gob2')">
+                </div>
+            </div>
+        </div>
+        <!-- room3 -->
+        <div id="e-frame6" class="bg-none">
+            <div id="encounter6" class="encounter d-flex bg-none">
+                <div id="iguana" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="ig-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/iguana_dog.png" alt="two-headed troll pic" class="bg-none"
+                        onclick="getHit('ig-life', 'iguana', 'iguana')">
+                </div>
+
+                <div id="wraith" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="wraith-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/wraith.png" alt="wraith pic" class="bg-none"
+                        onclick="getHit('wraith-life', 'wraith', 'wraith')">
+                </div>
+
+            </div>
+        </div>
+        <div id="e-frame7" class="bg-none">
+            <div id="encounter7" class="encounter d-flex bg-none">
+                <div id="gob1" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="gob1-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/goblin.png" alt="goblin pic" class="bg-none"
+                        onclick="getHit('gob1-life', 'goblin1', 'gob1')">
+                </div>
+                <div id="wraith" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="wraith-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/wraith.png" alt="wraith pic" class="bg-none"
+                        onclick="getHit('wraith-life', 'wraith', 'wraith')">
+                </div>
+                <div id="iguana" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="ig-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/iguana_dog.png" alt="iguana-dog pic" class="bg-none"
+                        onclick="getHit('ig-life', 'iguana', 'iguana')">
+                </div>
+            </div>
+        </div>
+        <div id="e-frame8" class="bg-none">
+            <div id="encounter8" class="encounter d-flex bg-none">
+                <div id="iguana" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="ig-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/iguana_dog.png" alt="iguana-dog pic" class="bg-none"
+                        onclick="getHit('ig-life', 'iguana','iguana')">
+                </div>
+                <div id="troll" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="troll-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/Troll_TwoHeadedTroll.png" alt="two-headed troll pic" class="bg-none"
+                        onclick="getHit('troll-life', 'troll', 'troll')">
+                </div>
+
+            </div>
+        </div>
+        <!-- room4(preboss) -->
+        <div id="e-frame9" class="bg-none">
+            <div id="encounter9" class="encounter d-flex bg-none">
+                <div id="infernal" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="infernal-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/infernal_spectre.png" alt="infernal spectre pic" class="bg-none"
+                        onclick="getHit('infernal-life', 'infernal', 'infernal')">
+                </div>
+            </div>
+        </div>
+        <div id="e-frame10" class="bg-none">
+            <div id="encounter10" class="encounter d-flex bg-none">
+                <div id="horror" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="horror-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/claw_horror.png" alt="claw horror pic" class="bg-none"
+                        onclick="getHit('horror-life', 'horror', 'horror')">
+                </div>
+            </div>
+        </div>
+        <div id="e-frame11" class="bg-none">
+            <div id="encounter11" class="encounter d-flex bg-none">
+                <div id="infernal" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="infernal-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/infernal_spectre.png" alt="infernal spectre pic" class="bg-none"
+                        onclick="getHit('infernal-life', 'infernal', 'infernal')">
+                </div>
+                <div id="horror" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="horror-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/claw_horror.png" alt="claw horror pic" class="bg-none"
+                        onclick="getHit('horror-life', 'horror', 'horror')">
+                </div>
+            </div>
+        </div>
+        <div id="e-frame12" class="bg-none">
+            <div id="encounter12" class="encounter d-flex bg-none">
+                <div id="dragon" class="monster d-flex flex-column justify-content-end align-items-center bg-none">
+                    <div class="progress mb-5 mon-bar" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div id="dragon-life" class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <img src="./img/monster/dragon.png" alt="dragon pic" class="bg-none"
+                        onclick="getHit('dragon-life', 'dragon', 'dragon')">
+                </div>
+            </div>
+        </div>
+        <div id="nav-box" class="bg-none">
+            <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
+                <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
+                        src="./img/icons/left_arr.png" alt="left arrow" class="bg-none icon"></button>
+                <p class="bg-none">CHOOSE YOUR F8T</p>
+                <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
+                        src="./img/icons/right_arr.png" alt="right arrow" class="bg-none icon"></button>
+            </div>
+        </div>
+        <div id="vic-box">
+            <div id="victory" class="victory d-flex bg-none align-items-center justify-content-around">
+                <div class="d-flex flex-column justify-content-around align-items-center">
+                    <h1 class="bg-none">VICTORY!</h1>
+                    <button id="proceed" onclick="proceed('nav-box')">PROCEED</button>
+                </div>
+            </div>
+        </div>
+        <div id="coffin">
+            <div id="death" class="victory d-flex bg-none align-items-center justify-content-around">
+                <div class="d-flex flex-column justify-content-around align-items-center">
+                    <img src="./img/character/dead.png" alt="death img" class="bg-none">
+                    <button id="title" onclick="">RETURN TO TITLE</button>
                 </div>
             </div>
         </div>

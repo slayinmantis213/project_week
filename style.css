@@ -93,8 +93,8 @@ header h1 {
 /* TITLE PAGE  */
 
 #title {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 600px;
 }
 
 #start {
@@ -330,6 +330,7 @@ li img{
 
 .encounter {
     flex: 2;
+    opacity: 1;
 }
 
 .mon-bar{
@@ -340,18 +341,84 @@ li img{
     background-color: lightgray;
 }
 
+.m-atk{
+    position: relative;
+    top: 5px;
+    right: 10px;
+}
+
 #gob1 img, #gob2 img{
     height: 300px;
+    transition: 500ms;
 }
 
 #imp img{
     height: 340px;
+    transition: 500ms;
 }
 
 #wraith img{
     height: 430px;
+    transition: 500ms;
 }
 
 #troll img{
     height: 470px;
+    transition: 500ms;
+}
+
+#iguana img{
+    height: 250px;
+    transition: 500ms;
+}
+
+#infernal img{
+    height: 480px;
+    transition: 500ms;
+}
+
+#horror img{
+    height: 475px;
+    transition: 500ms;
+}
+
+#dragon img{
+    width: 800px;
+    height: 500px;
+}
+
+
+
+.victory{
+    flex: 2
+}
+
+.victory div{
+    height: 200px;
+    width: 400px;
+    background-image: url(./img/background/wood_texture_top.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px black;
+}
+
+#proceed, #title{
+    height: 50px;
+    width: 250px;
+    background-color: gold;
+    font-size: 18pt;
+    box-shadow: 5px 5px black;
+    cursor: pointer;
+    color: red;
+}
+
+#c-frame {
+    height: 100%;
+    width: 100%;
+}
+
+#death img{
+    height: 150px;
+    width: 300px;
 }
