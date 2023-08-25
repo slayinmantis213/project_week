@@ -206,7 +206,7 @@ function getHit(bar, mon, id) {
     // pRoll = 100;
     if (pChar == 'rogue'){
         console.log('rog')
-        if (pRoll == 17 || pRoll == 18 || pRoll == 19){
+        if (pRoll >=16){
             pRoll = 20;
         }
     }
