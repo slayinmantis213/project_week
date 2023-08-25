@@ -20,26 +20,45 @@
             <div id="win1" class="window">
                 <div id="content1" class="d-flex flex-column align-items-center justify-content-around">
                     <img src="./img/background/f8t.png" alt="title-logo" id="title">
-                    <button id="start" onmouseover="addFlash(this)" onclick="fadeTitle('content1');">START GAME</button>
+                    <button id="start" onclick="fadeTitle('content1')" onmouseover="addFlash(this)"
+                        onmouseout="cutFlash(this)">START GAME</button>
                     <div>
-                        <a href="#" class="text-decoration-none d-block text-center">sauce</a>
-                        <a href="bib.txt" class="text-decoration-none d-block text-center mt-3">bibliography</a>
+                        <a href="https://github.com/slayinmantis213/project_week"
+                            class="text-decoration-none d-block text-center" onmouseover="addFlash(this)"
+                            onmouseout="cutFlash(this)">sauce</a>
+                        <a href="bib.txt" class="text-decoration-none d-block text-center mt-3"
+                            onmouseover="addFlash(this)" onmouseout="cutFlash(this)">bibliography</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="bord mt-3"></div>
+        <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div id="title-frame" class="window">
+                <div id="content1" class="d-flex flex-column align-items-center justify-content-around">
+                    <img src="./img/background/f8t.png" alt="title-logo" id="title">
+                    <button id="start" onmouseover="addFlash(this)" onmouseout="cutFlash(this)"
+                        onclick="fadeTitle('content1');">START GAME</button>
+                    <div>
+                        <a href="https://github.com/slayinmantis213/project_week"
+                            class="text-decoration-none d-block text-center" onmouseover="addFlash(this)"
+                            onmouseout="cutFlash(this)">sauce</a>
+                        <a href="bib.txt" class="text-decoration-none d-block text-center mt-3"
+                            onmouseover="addFlash(this)" onmouseout="cutFlash(this)">bibliography</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- CONTENT 2 CHAR SELECT -->
 
         <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
             <div id="win2" class="window">
-
                 <div id="content2" class="d-flex flex-column">
-
                     <div id="war" class="char-box d-flex align-items-center justify-content-around"
-                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)"
+                        onclick="charSelect('warrior', 'win5', 'content5')">
                         <div class="char-info d-flex align-items-center justify-content-between">
                             <h1 class="mr-20">WARRIOR</h1>
                             <img src="./img/character/warrior.png" alt="warrior pic">
@@ -51,9 +70,9 @@
                             <p>Claymore: attacks gain +2 bonus damage</p>
                         </div>
                     </div>
-
                     <div id="rog" class="char-box d-flex align-items-center justify-content-around"
-                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)"
+                        onclick="charSelect('rogue', 'win3', 'content3')">
                         <div class="char-info d-flex align-items-center justify-content-between">
                             <h1 class="mr-20">ROGUE</h1>
                             <img src="./img/character/rogue.png" alt="rogue pic">
@@ -66,15 +85,11 @@
                                 <img src="./img/icons/dagger.png" alt="dagger icon" class="icon">
                                 <p>Dagger: increased chance to critically strike</p>
                             </div>
-                            <div class="d-flex align-items-center mt-3">
-                                <img src="./img/icons/Bow.png" alt="bow icon" class="icon">
-                                <p>Bow: attacks cost 1 sp and are doubled (can miss!)</p>
-                            </div>
                         </div>
                     </div>
-
                     <div id="mag" class="char-box d-flex align-items-center justify-content-around"
-                        onmouseover="lightUp(this)" onmouseout="lightDown(this)">
+                        onmouseover="lightUp(this)" onmouseout="lightDown(this)"
+                        onclick="charSelect('mage', 'win4', 'content4')">
                         <div class="char-info d-flex align-items-center justify-content-between">
                             <h1 class="mr-20">MAGE</h1>
                             <img src="./img/character/mage.png" alt="mage pic">
@@ -82,22 +97,21 @@
                                 with cosmic flame.</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <img src="./img/icons/staff.png" alt="staff icon" class="icon">
-                            <p>Staff: gain Fireball spell; spells cost 1 sp; attacks deal reduced damage.</p>
+                            <img src="./img/icons/fireball.png" alt="fireball icon" class="icon">
+                            <p>Fireball: deals a random amount of bonus damage (1-5); take 5 damage when you roll a one
+                            </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <!-- CONTENT 3 ROG/NAV SIM -->
         <header>
             <h1>ROGUE</h1>
         </header>
 
         <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
-            <div class="window">
+            <div id="win3" class="window">
 
                 <div id="content3"
                     class="d-flex flex-column flex-column-reverse align-items-center justify-content-end">
@@ -107,11 +121,6 @@
                         <div class="p-life progress bg-none mt-neg-70 bg-none">
                             <div id="p-life" class="progress-bar p-life-sh" style="width: 100%"></div>
                         </div>
-                        <div id="sp" class="d-flex align-items-center p-2">
-                            <p class="text-center">Spell points: <br>
-                                <span>15</span>/15
-                            </p>
-                        </div>
                         <div id="roller" class="bg-none d-flex align-items-center justify-content-center"
                             onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
                             20
@@ -120,9 +129,7 @@
                             <div id="equipment" class="bg-none">
                                 <div class="h-100">
                                     <p>Equipment</p>
-                                    <img src="./img/icons/Bow.png" alt="bow icon" class="icon" onclick="eqSel(this)">
-                                    <img src="./img/icons/dagger.png" alt="dagger icon" class="icon"
-                                        onclick="eqSel(this)">
+                                    <img src="./img/icons/dagger.png" alt="dagger icon" class="icon equip-sel">
                                     <img src="./img/icons/life_pot.png" alt="life potion" class="icon"
                                         onclick="heal(this)" onmouseover="rolShad(this)" onmouseout="remShad(this)">
                                 </div>
@@ -131,7 +138,7 @@
                             <div class="bg-none dial">
                                 <div id="dialogue"
                                     class="bg-none text-center d-flex align-items-center justify-content-center h-100">
-                                    holding place
+                                    ...
                                 </div>
                             </div>
 
@@ -156,37 +163,21 @@
             </div>
         </div>
 
-        <!-- CONTENT 4 MAG/COMBAT SIM  -->
+        <!-- CONTENT 4 MAGE  -->
         <header>
             <h1>MAGE</h1>
         </header>
 
-        <!-- <div class="bord border m-auto mt-3 d-flex align-items-center justify-content-center">
-            <div id=" " class="window">
+        <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div id="win4" class="window">
 
                 <div id="content4"
-                    class="d-flex flex-column flex-column-reverse align-items-center justify-content-between">
+                    class="d-flex flex-column flex-column-reverse align-items-center justify-content-end">
 
                     <div id="hud" class="d-flex align-items-center">
                         <img src="./img/character/mage-port.png" alt="PORTRAIT" id="portrait">
                         <div class="p-life progress bg-none mt-neg-70 bg-none">
-                            <div class="progress-bar p-life-sh" style="width: 100%"></div>
-                        </div>
-                        <div class="bg-none">
-                            <div class="btn-group dropend">
-                                <button type="button" class="btn btn-secondary dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Spell
-                                </button>
-                                <ul class="dropdown-menu bg-none">
-                                    <li class="bg-none"><img src="./img/icons/fireball.png" alt="" class="bg-none"></li>
-                                </ul>
-                            </div>
-                            <div id="sp" class="d-flex align-items-center p-2">
-                                <p class="text-center">Spell points: <br>
-                                    <span>15</span>/15
-                                </p>
-                            </div>
+                            <div id="p-life" class="progress-bar p-life-sh" style="width: 100%"></div>
                         </div>
                         <div id="roller" class="bg-none d-flex align-items-center justify-content-center"
                             onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
@@ -194,37 +185,95 @@
                         </div>
                         <div id="e-d" class="d-flex justify-content-between gap-10 bg-none mr-20">
                             <div id="equipment" class="bg-none">
-                                <div>
+                                <div class="h-100">
                                     <p>Equipment</p>
-                                    <img src="./img/icons/staff.png" alt="staff icon" class="icon"
-                                        onclick="eqSel(this)">
-                                    <img src="./img/icons/fireball.png" alt="fireball icon" class="icon"
-                                        onclick="eqSel(this)">
+                                    <img src="./img/icons/fireball.png" alt="dagger icon" class="icon equip-sel">
                                     <img src="./img/icons/life_pot.png" alt="life potion" class="icon"
-                                        onclick="this.remove()" onmouseover="rolShad(this)" onmouseout="remShad(this)">
+                                        onclick="heal(this)" onmouseover="rolShad(this)" onmouseout="remShad(this)">
                                 </div>
+
                             </div>
                             <div class="bg-none dial">
                                 <div id="dialogue"
                                     class="bg-none text-center d-flex align-items-center justify-content-center h-100">
-                                    holding place
+                                    ...
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
-                                src="./img/icons/left_arr.png" alt="left arrow" class="bg-none icon"></button>
-                        <p class="bg-none">CHOOSE YOUR F8T</p>
-                        <button onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="move('navigation')"><img
-                                src="./img/icons/right_arr.png" alt="right arrow" class="bg-none icon"></button>
+                    <div id="c-frame"
+                        class="bg-none d-flex flex-column flex-column-reverse align-items-center justify-content-end">
+                        <div id="nav-box" class="bg-none">
+                            <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/left_arr.png" alt="left arrow"
+                                        class="bg-none icon"></button>
+                                <p class="bg-none">CHOOSE YOUR F8T</p>
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/right_arr.png" alt="right arrow"
+                                        class="bg-none icon"></button>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
             </div>
-        </div> -->
+        </div>
+
+        <!-- CONTENT 5 WARRIOR  -->
+
+        <div class="bord m-auto mt-3 d-flex align-items-center justify-content-center">
+            <div id="win5" class="window">
+
+                <div id="content5"
+                    class="d-flex flex-column flex-column-reverse align-items-center justify-content-end">
+
+                    <div id="hud" class="d-flex align-items-center">
+                        <img src="./img/character/warrior-port.png" alt="PORTRAIT" id="portrait">
+                        <div class="p-life progress bg-none mt-neg-70 bg-none">
+                            <div id="p-life" class="progress-bar p-life-sh" style="width: 100%"></div>
+                        </div>
+                        <div id="roller" class="bg-none d-flex align-items-center justify-content-center"
+                            onmouseover="rolShad(this)" onmouseout="remShad(this)" onclick="roll(this)">
+                            20
+                        </div>
+                        <div id="e-d" class="d-flex justify-content-between gap-10 bg-none mr-20">
+                            <div id="equipment" class="bg-none">
+                                <div class="h-100">
+                                    <p>Equipment</p>
+                                    <img src="./img/icons/sword.png" alt="sword icon" class="icon equip-sel">
+                                    <img src="./img/icons/life_pot.png" alt="life potion" class="icon"
+                                        onclick="heal(this)" onmouseover="rolShad(this)" onmouseout="remShad(this)">
+                                </div>
+
+                            </div>
+                            <div class="bg-none dial">
+                                <div id="dialogue"
+                                    class="bg-none text-center d-flex align-items-center justify-content-center h-100">
+                                    ...
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="c-frame"
+                        class="bg-none d-flex flex-column flex-column-reverse align-items-center justify-content-end">
+                        <div id="nav-box" class="bg-none">
+                            <div id="navigation" class="d-flex align-items-center justify-content-between bg-none">
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/left_arr.png" alt="left arrow"
+                                        class="bg-none icon"></button>
+                                <p class="bg-none">CHOOSE YOUR F8T</p>
+                                <button onmouseover="rolShad(this)" onmouseout="remShad(this)"
+                                    onclick="move('navigation')"><img src="./img/icons/right_arr.png" alt="right arrow"
+                                        class="bg-none icon"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- ENCOUNTERS -->
 
@@ -466,7 +515,20 @@
             <div id="death" class="victory d-flex bg-none align-items-center justify-content-around">
                 <div class="d-flex flex-column justify-content-around align-items-center">
                     <img src="./img/character/dead.png" alt="death img" class="bg-none">
-                    <button id="title" onclick="">RETURN TO TITLE</button>
+                    <button id="menu" onclick="menu()">RETURN TO TITLE</button>
+                </div>
+            </div>
+        </div>
+        <div id="clear-box">
+            <div id="game-clear" class="victory d-flex bg-none align-items-center justify-content-around">
+                <div class="d-flex flex-column justify-content-around align-items-center">
+                    <h1 class="bg-none">VICTORY!</h1>
+                    <p class="bg-none">You have vanquished the mighty dragon...
+                        What now will be your f8t?</p>
+                    <div id="clear-butt" class="d-flex justify-content-around">
+                        <button onclick="menu()">RETURN TO TITLE</button>
+                        <button onclick="proceed('nav-box')">PROCEED</button>
+                    </div>
                 </div>
             </div>
         </div>

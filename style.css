@@ -33,6 +33,7 @@ a {
 .gap-10 {
     gap: 10px;
 }
+
 .flash {
     background-color: white;
     color: black;
@@ -66,6 +67,7 @@ header h1 {
 
 
 /* MAIN  */
+
 #view {
     border: 1px solid darkgray;
 }
@@ -82,7 +84,8 @@ header h1 {
 }
 
 #content1,
-#content2 {
+#content2,
+#content6 {
     height: 100%;
     width: 100%;
     transition: 1000ms;
@@ -139,10 +142,6 @@ header h1 {
 }
 
 
-/* INTRO ROOM  */
-
-/* url(./img/background/dungeon_intro_edit.png) */
-
 /* NAVIGATION MENU */
 
 #navigation{
@@ -159,14 +158,14 @@ header h1 {
     width: 125px;
     background-color: yellow;
     border-radius: 20px;
-    transition: 100ms;
+    transition: 200ms;
 }
 
 
 
 /* HUD  */
 
-#content3, #content4 {
+#content3, #content4, #content5 {
     background-image: url(./img/background/dungeon_intro_edit.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -225,7 +224,7 @@ li img{
     box-shadow: 0px 0px 12px 8px gold;
 }
 
-.dropend, #sp{
+/* .dropend, #sp{
     outline: 1px solid gold;
 }
 
@@ -245,7 +244,7 @@ li img{
     margin-right: 5px;
     border-radius: 10px;
 
-}
+} */
 
 
 /* d20  */
@@ -261,7 +260,7 @@ li img{
     background-position: center;
     font-size: 30pt;
     background-color: gold;
-    transition: 1000ms;
+    transition: 500ms;
 }
 .rol-shad{
     box-shadow: 0 0 20px 10px gold;
@@ -403,7 +402,7 @@ li img{
     box-shadow: 3px 3px 5px black;
 }
 
-#proceed, #title{
+#proceed, #menu{
     height: 50px;
     width: 250px;
     background-color: gold;
@@ -421,4 +420,23 @@ li img{
 #death img{
     height: 150px;
     width: 300px;
+}
+
+#clear-butt{
+    background: none;
+}
+
+#game-clear button{
+    width: 150px;
+    height: 75px;
+    background-color: gold;
+    color: red;
+    box-shadow: 5px 5px black;
+    cursor: pointer;
+    font-size: 18pt;
+}
+
+#game-clear p{
+    font-size: 12pt;
+    padding: 0 20px 0 20px;
 }
