@@ -206,28 +206,27 @@ function getHit(bar, mon, id) {
     // pRoll = 100;
     if (pChar == 'rogue'){
         console.log('rog')
-        if (pRoll >=16){
+        if (pRoll >=15){
             pRoll = 20;
         }
     }
     if (pRoll == 20){
-        pRoll = 25;
+        pRoll = 30;
     }
     if (pChar == 'warrior'){
         console.log('war')
-        pRoll += 2;
+        pRoll += 3;
     }
     if (pChar == 'mage'){
         console.log('mag')
-        if (pRoll == 1){
+        if (pRoll <= 3){
             pLife -= 5;
             pBar.style.width = pLife + '%';
         }
-        pRoll += Math.round(Math.random()*4 + 1);
+        pRoll += Math.round(Math.random()*7 + 1);
     }
     console.log(pRoll);
     mLife -= pRoll;
-    dia.innerText = 'You deal ' + pRoll + ' damage!';
     if (mLife <= 0) {
         mLife = 0;
     }
@@ -246,6 +245,7 @@ function getHit(bar, mon, id) {
     var mRoll = Math.round(Math.random() * (monsters[mon][2] - 1) + 1);
     mAtk(id);
     pLife -= mRoll;
+    dia.innerText = 'You take ' + mRoll + ' damage!';
     console.log(pLife);
     if (pLife <= 0) {
         pLife = 0;
