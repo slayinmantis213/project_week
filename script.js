@@ -8,7 +8,6 @@ let bgs = ["url(./img/background/dungeon_bg1.jpg)", "url(./img/background/dungeo
     "url(./img/background/dungeon_bg7.jpg)", "url(./img/background/dungeon_bg8.jpg)",
     "url(./img/background/dungeon_bg9.jpg)"]
 
-// console.log(bgs.length)
 var startSwitch = true;
 
 var charSwitch = true;
@@ -205,7 +204,6 @@ function getHit(bar, mon, id) {
     var mLife = monsters[mon][0];
     // pRoll = 100;
     if (pChar == 'rogue'){
-        console.log('rog')
         if (pRoll >=15){
             pRoll = 20;
         }
@@ -214,18 +212,15 @@ function getHit(bar, mon, id) {
         pRoll = 30;
     }
     if (pChar == 'warrior'){
-        console.log('war')
         pRoll += 3;
     }
     if (pChar == 'mage'){
-        console.log('mag')
         if (pRoll <= 3){
             pLife -= 5;
             pBar.style.width = pLife + '%';
         }
         pRoll += Math.round(Math.random()*7 + 1);
     }
-    console.log(pRoll);
     mLife -= pRoll;
     if (mLife <= 0) {
         mLife = 0;
@@ -234,19 +229,16 @@ function getHit(bar, mon, id) {
     var mBar = document.getElementById(bar);
     var b = (mLife * 100) / monsters[mon][1];
     mBar.style.width = b + "%";
-
     if (mLife == 0) {
         monCount--;
         monDie(id);
         switchRoll = true;
         return
     }
-
     var mRoll = Math.round(Math.random() * (monsters[mon][2] - 1) + 1);
     mAtk(id);
     pLife -= mRoll;
     dia.innerText = 'You take ' + mRoll + ' damage!';
-    console.log(pLife);
     if (pLife <= 0) {
         pLife = 0;
         pDie();
@@ -297,21 +289,18 @@ function move(id) {
             x.style.backgroundImage = bgs[Math.round(Math.random() * (bgs.length - 1))];
             enc = document.getElementById('e-frame1');
             monCount = 2;
-            // currentE = 'e1';
             c.innerHTML += enc.innerHTML;
         }
         else if (roomCount >= 5) {
             x.style.backgroundImage = "url(./img/background/prompt.jpg)";
             enc = document.getElementById(encount['e12'][2]);
             monCount = 1;
-            // currentE = 'e12'
             c.innerHTML += enc.innerHTML;
         }
         else if (roomCount == 4) {
             x.style.backgroundImage = "url(./img/background/pre.jpg)";
             mons = 'e' + Math.round(Math.random() * (2) + 9)
             monCount = encount[mons][0];
-            // currentE = mons;
             enc = document.getElementById(encount[mons][2]);
             c.innerHTML += enc.innerHTML;
         }
@@ -319,7 +308,6 @@ function move(id) {
             x.style.backgroundImage = bgs[Math.round(Math.random() * (bgs.length - 1))];
             mons = 'e' + Math.round(Math.random() * (2) + 6)
             monCount = encount[mons][0];
-            // currentE = mons;
             enc = document.getElementById(encount[mons][2]);
             c.innerHTML += enc.innerHTML;
         }
@@ -327,11 +315,9 @@ function move(id) {
             x.style.backgroundImage = bgs[Math.round(Math.random() * (bgs.length - 1))];
             mons = 'e' + Math.round(Math.random() * (3) + 2)
             monCount = encount[mons][0];
-            // currentE = mons;
             enc = document.getElementById(encount[mons][2]);
             c.innerHTML += enc.innerHTML;
         }
-        // console.log(roomCount)
     }, 700)
     setTimeout(() => {
         x.style.opacity = 1;
